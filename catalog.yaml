@@ -1,0 +1,14 @@
+#%Catalog Descriptor 1.0
+projects:
+  - main: payments-oas.yaml
+    assetId: invoice-payment-system-api
+    version: 1.1.0
+    apiVersion: v1
+    contact:
+      name: 'Steve Wonder'
+      email: 'admin@fakepayment.com'
+    tags:
+      - payments
+      - training
+    documentation:
+      Home: home.md
