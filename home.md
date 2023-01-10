@@ -24,7 +24,7 @@ User is at least one of the following in relation to the Ship requested:
 
 ## Success Response
 
-**Condition** : If Pet exists and Authorized User has required permissions.
+**Condition** : If Order exists and Authorized User has required permissions.
 
 **Code** : `200 OK`
 
@@ -33,15 +33,15 @@ User is at least one of the following in relation to the Ship requested:
 ```json
 {
     "id": 345,
-    "name": "Super Pet",
+    "description": "Payment with credit card for order 124 done",
     "enterprise": false,
-    "url": "http://testserver/api/Pets/345/"
+    "url": "http://testserver/api/orders/345/"
 }
 ```
 
 ## Error Responses
 
-**Condition** : If Pet does not exist with `id` of provided `pk` parameter.
+**Condition** : If Order does not exist with `id` of provided `pk` parameter.
 
 **Code** : `404 NOT FOUND`
 
@@ -49,7 +49,7 @@ User is at least one of the following in relation to the Ship requested:
 
 ### Or
 
-**Condition** : If Pet exists but Authorized User does not have required
+**Condition** : If Order exists but Authorized User does not have required
 permissions.
 
 **Code** : `403 FORBIDDEN`
@@ -65,7 +65,7 @@ permissions.
 
 There are security issues:
 
-* This view allows existing users to test for existence of Pets that exist
+* This view allows existing users to test for existence of Order that exist
     but that they do not have access to.
-* Pet IDs are sequential so an authorized user can count all the Pets
+* Order IDs are sequential so an authorized user can count all the orders
     on the system.
